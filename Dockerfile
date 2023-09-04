@@ -1,9 +1,15 @@
-FROM python:3.11.5-slim
+FROM python:3.11.1-slim
 
-WORKDIR /fastapi_task
+RUN mkdir /fastapi_app
 
-COPY . /fastapi_task
+WORKDIR /fastapi_app
 
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+
+COPY requirements.txt .
 RUN pip install -r requirements.txt
 
-CMD ["uvicorn", "src.main:app", "--host", "127.0.0.1", "--port", "8000"]
+COPY . .
+
+RUN chmod a+x docker/*.sh
