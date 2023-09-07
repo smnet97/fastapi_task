@@ -4,9 +4,9 @@ from fastapi import APIRouter, Depends
 from sqlalchemy import insert
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.auth.schemas import RoleCreate
-from app.database import get_async_session
-from app.auth.models import role, user
+from auth.schemas import RoleCreate
+from database import get_async_session
+from auth.models import role, user
 
 router = APIRouter(
     prefix="/auth",
