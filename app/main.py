@@ -1,7 +1,7 @@
 from fastapi import FastAPI
-from auth.base_config import fastapi_users, auth_backend
-from auth.schemas import UserRead, UserCreate
-from auth.router import router as auth_router
+from app.auth.base_config import fastapi_users, auth_backend
+from app.auth.schemas import UserRead, UserCreate
+from app.auth.router import router as auth_router
 
 app = FastAPI(
     title='project 1'
